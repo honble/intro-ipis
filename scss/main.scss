@@ -1,0 +1,636 @@
+@charset "utf-8";
+
+@import 'variables';
+@import 'mixin';
+@import 'animation';
+
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  font-family: $nanumGothic;
+  font-size: 16px;
+  color: #706677;
+  background-image: linear-gradient(
+    89.9deg,
+    rgba(208, 246, 255, 1) 0.1%,
+    rgba(255, 237, 237, 1) 47.9%,
+    rgba(255, 255, 231, 1) 100.2%
+  );
+}
+
+.ku-logo {
+  img {
+    width: 160px;
+    margin-left: 10px;
+
+    @include resp-pc(768px) {
+      width: 140px;
+    }
+
+    @include resp-pc(480px) {
+      width: 120px;
+    }
+  }
+}
+
+.ku-intro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px 20px;
+
+  @include resp-pc(480px) {
+    padding: 10px;
+  }
+
+  .inner {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+    max-width: 1400px;
+  }
+
+  .footer {
+    align-self: flex-end;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: end;
+
+    @include resp-pc(480px) {
+      align-self: center;
+      text-align: center;
+    }
+
+    span {
+      font-size: 14px;
+
+      &.copy {
+        display: block;
+      }
+
+      @include resp-pc(768px) {
+        display: block;
+      }
+    }
+  }
+}
+
+.flexbox01 {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: $gap60;
+}
+
+.flexbox01__left {
+  width: 30%;
+
+  @include resp-pc(1200px) {
+    width: 40%;
+  }
+
+  @include resp-pc(768px) {
+    order: 2;
+    width: 100%;
+  }
+}
+
+.flexbox01__right {
+  width: calc(70% - $gap60);
+  display: flex;
+  flex-direction: column;
+
+  @include resp-pc(1200px) {
+    width: calc(60% - $gap60);
+  }
+
+  @include resp-pc(768px) {
+    order: 1;
+    width: 100%;
+  }
+}
+
+.ku-intro__banner {
+  width: 100%;
+  border-radius: $bdr-rad20;
+  box-shadow: 0 0 10px 1px rgba($color: #000000, $alpha: 0.3);
+  background: url(../images/slide-img_01.jpg) no-repeat center / cover;
+
+  .swiper-slide {
+    padding: 20px;
+    color: #efd3ba;
+  }
+
+  .swiper-pagination {
+    .swiper-pagination-bullet {
+      width: 10px;
+      height: 10px;
+      background-color: #fff;
+      opacity: 1;
+
+      &.swiper-pagination-bullet-active {
+        border: 1px solid #000000;
+      }
+    }
+  }
+}
+
+.slide-banner__ttl {
+  span {
+    display: block;
+    text-align: center;
+    line-height: 1.4;
+    font-size: 24px;
+
+    // 재학생 1만명 이상 대학 취업률 1위
+    &:nth-of-type(2) {
+      strong {
+        @include resp-pc(820px) {
+          display: block;
+        }
+      }
+    }
+
+    &.history {
+      margin: 10px 0 20px;
+      padding: 0.25em 0.5em;
+      border-radius: 0.2em;
+      font-size: 16px;
+      font-family: $nanumGothic_b;
+      color: #ff5003;
+      background-color: gold;
+
+      b {
+        font-family: $nanumGothic_b;
+        font-size: 1.1em;
+      }
+    }
+  }
+}
+
+.slide-banner__flex01 {
+  span {
+    display: block;
+
+    &.ttl {
+      text-align: center;
+      font-size: 18px;
+    }
+  }
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $gap10;
+    width: 100%;
+
+    li {
+      width: calc((100% - $gap10) / 2);
+      padding: 10px;
+      text-align: center;
+      @extend %card-bgc;
+
+      span {
+        line-height: 1.4;
+        &:first-of-type {
+          @include resp-pc(820px) {
+            letter-spacing: -0.13em;
+          }
+        }
+
+        &:last-of-type {
+          @extend %pseudo-parent;
+          margin-top: 0.5em;
+          line-height: 20px;
+          font-family: $nanumGothic_b;
+          color: gold;
+
+          &::before {
+            @extend %pseudo-icon;
+            background-image: url(../images/trophy.png);
+          }
+
+          b {
+            padding-left: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.slide-banner__flex02 {
+  span {
+    display: block;
+    line-height: 1.4;
+
+    &.ttl {
+      text-align: center;
+      font-size: 18px;
+    }
+
+    &.cite {
+      margin-right: 5px;
+      margin-bottom: 5px;
+      text-align: end;
+      font-size: 14px;
+
+      @include resp-pc(820px) {
+        margin-right: 0;
+        text-align: center;
+      }
+    }
+
+    b {
+      color: gold;
+    }
+  }
+
+  ul {
+    li {
+      margin-bottom: 10px;
+      padding: 10px;
+      text-align: center;
+      @extend %card-bgc;
+    }
+  }
+}
+
+.splide__slide02 {
+  span {
+    display: block;
+
+    &.ttl {
+      text-align: center;
+      font-size: 20px;
+    }
+  }
+
+  dl {
+    display: flex;
+    gap: $gap10;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    @extend %card-bgc;
+
+    dt {
+      &::after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: gold;
+      }
+    }
+
+    dd {
+      ul {
+        li {
+          position: relative;
+          margin-bottom: 5px;
+
+          p {
+            padding-left: 0.7em;
+
+            & > * {
+              display: block;
+              font-size: 15px;
+              line-height: 1.4;
+              letter-spacing: -0.1em;
+
+              @include resp-pc(820px) {
+                display: inline;
+                font-size: 16px;
+                letter-spacing: -0.1em;
+              }
+
+              @include resp-pc(480px) {
+              }
+            }
+          }
+
+          &::before {
+            content: '';
+            display: inline-block;
+            width: 5px;
+            height: 5px;
+            position: absolute;
+            top: 0.5em;
+            background-color: gold;
+            border-radius: 50%;
+          }
+        }
+      }
+    }
+  }
+}
+
+.ku-intro__con {
+  flex-grow: 1;
+  background: url(../images/bg-img.png) no-repeat right 100% / 47%;
+
+  @include resp-pc(1400px) {
+    background-size: 55%;
+    background-position-y: 115%;
+  }
+
+  @include resp-pc(1200px) {
+    background-position-y: 110%;
+  }
+
+  @include resp-pc(1100px) {
+    background-size: 60%;
+    background-position-y: 105%;
+  }
+
+  @include resp-pc(1000px) {
+    background-size: 70%;
+    background-position-y: 110%;
+  }
+
+  @include resp-pc(900px) {
+    background-size: 75%;
+    background-position-y: 100%;
+  }
+
+  @include resp-pc(820px) {
+    background-size: 80%;
+    background-position-y: 100%;
+  }
+
+  @include resp-pc(768px) {
+    background: none;
+    margin: 20px;
+  }
+
+  .ttl {
+    margin-bottom: 0.75em;
+    font-family: $nanumGothic_ex;
+    font-size: clamp(1.7rem, 2.5vw, 4rem);
+    line-height: 1.25;
+  }
+
+  .year {
+    display: block;
+    font-family: $nanumGothic_b;
+    font-size: clamp(1.5rem, 2vw, 3rem);
+    letter-spacing: -0.1em;
+    background: linear-gradient(to left, var(--purple), var(--violet), var(--pink), var(--purple));
+    /* for animating the text color */
+    animation: background-pan 3s linear infinite;
+    background-size: 200%;
+    /* make the text have gradient color */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    white-space: nowrap;
+  }
+
+  .application {
+    @include resp-pc(480px) {
+      letter-spacing: -0.1em;
+    }
+  }
+
+  .txt {
+    font-family: $nanumGothic_b;
+    font-size: clamp(1.25rem, 1.5vw, 2.5rem);
+    line-height: 1.6;
+
+    @include resp-pc(768px) {
+      font-weight: initial;
+    }
+
+    span {
+      @include resp-pc(1200px) {
+        display: block;
+      }
+
+      @include resp-pc(480px) {
+        font-size: 18px;
+        letter-spacing: -0.1em;
+      }
+
+      b {
+        position: relative;
+        font-size: 1.2em;
+        font-weight: inherit;
+        color: #fff;
+        text-shadow: 0 0 0.05em #fff, 0 0 0.2em var(--pink), 0 0 0.3em #fe05e1;
+      }
+    }
+  }
+
+  .date,
+  .info {
+    & > span {
+      @extend %pseudo-parent;
+      padding-left: 1.4em;
+      font-size: 18px;
+
+      &::before {
+        @extend %pseudo-icon;
+        left: 0;
+      }
+
+      span:nth-of-type(2),
+      span:last-of-type {
+        @include resp-pc(820px) {
+          display: block;
+          text-indent: 1.5em;
+          line-height: 2;
+        }
+
+        @include resp-pc(768px) {
+          display: inline-block;
+          text-indent: 0;
+          line-height: 1.2;
+        }
+
+        @include resp-pc(480px) {
+          display: block;
+          text-indent: 1.5em;
+        }
+      }
+    }
+  }
+
+  .date {
+    & > span {
+      &::before {
+        background-image: url(../images/calendar_month.png);
+      }
+    }
+  }
+
+  .info {
+    & > span {
+      &::before {
+        background-image: url(../images/support_agent.png);
+      }
+    }
+  }
+
+  .home-link {
+    all: unset;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 280px;
+    height: 50px;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    border: none;
+    position: relative;
+    z-index: 1;
+    letter-spacing: 0.1em;
+    white-space: nowrap;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    cursor: pointer;
+    color: #f0f0f0;
+    background: transparent;
+
+    span {
+      font-size: 18px;
+
+      &.icon {
+        @extend %pseudo-icon;
+        top: 0.8em;
+        left: 1em;
+        margin-right: 0.5em;
+        background-image: url(../images/location_city.png);
+      }
+    }
+
+    &::after,
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      z-index: -99999;
+      transition: all 0.4s;
+    }
+
+    &::before {
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+      background: linear-gradient(90deg, var(--pink), var(--purple));
+      transform: translate(0%, 0%);
+    }
+
+    &::after {
+      width: 35px;
+      height: 35px;
+      border-radius: 50px;
+      background: #ffffff15;
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+      transform: translate(10px, 10px);
+    }
+
+    &:hover::before {
+      width: 110%;
+      height: 110%;
+      transform: translate(5%, 20%);
+    }
+
+    &:hover::after {
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+      transform: translate(0, 0);
+    }
+
+    &:active::after {
+      transition: 0s;
+      transform: translate(0, 5%);
+    }
+
+    @include resp-mob(481px) {
+      &:hover {
+        transform: translateX(5%);
+      }
+    }
+  }
+}
+
+.ku-intro__link {
+  width: 100%;
+  padding: 20px 40px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 0 10px 1px rgba($color: #000000, $alpha: 0.1);
+
+  @include resp-pc(1200px) {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+
+  li.swiper-slide {
+    position: relative;
+    text-align: center;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 1px;
+      height: 2.5em;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      background-color: rgba($color: #000000, $alpha: 0.2);
+    }
+
+    &:first-of-type::after {
+      display: none;
+    }
+
+    @include resp-pc(1400px) {
+      &::after {
+        display: none;
+      }
+    }
+
+    a {
+      display: block;
+      padding: 5px 0;
+
+      img {
+        max-width: 30px;
+      }
+
+      &:hover img {
+        transform: scale(1.2);
+      }
+
+      span {
+        display: block;
+        margin-top: 1em;
+        padding: 0 10px;
+        letter-spacing: -0.1em;
+
+        @include resp-pc(820px) {
+          letter-spacing: -0.2em;
+        }
+      }
+
+      &:hover span {
+        color: var(--violet);
+      }
+    }
+  }
+
+  .swiper-button-next:after,
+  .swiper-button-prev:after {
+    font-size: 20px;
+    color: #000;
+  }
+}

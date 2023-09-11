@@ -1,0 +1,95 @@
+// font-family
+$nanumGothic: 'Nanum Gothic', sans-serif;
+$nanumGothic_b: 'Nanum Gothic Bold', sans-serif;
+$nanumGothic_ex: 'Nanum Gothic exBold', sans-serif;
+$dongle: 'Dongle', sans-serif;
+
+// gap_size
+$gap10: 10px;
+$gap60: 60px;
+
+// border-radius
+$bdr-rad20: 20px;
+
+%pseudo-parent {
+  position: relative;
+}
+
+%pseudo-icon {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 0;
+  background: transparent no-repeat center / contain;
+}
+
+%card-bgc {
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.089);
+  backdrop-filter: blur(30px);
+  background-color: rgba(65, 65, 65, 0.308);
+}
+
+.mb10 {
+  margin-bottom: 10px;
+}
+.mb20 {
+  margin-bottom: 20px;
+}
+.mb30 {
+  margin-bottom: 30px;
+}
+.mb40 {
+  margin-bottom: 40px;
+}
+.mb50 {
+  margin-bottom: 50px;
+}
+
+.mt10 {
+  margin-top: 10px;
+}
+.mt20 {
+  margin-top: 20px;
+}
+.mt30 {
+  margin-top: 30px;
+}
+.mt40 {
+  margin-top: 40px;
+}
+.mt50 {
+  margin-top: 50px;
+}
+
+.size_xxs {
+  font-size: 10px;
+}
+.size_xs {
+  font-size: 12px;
+} //h6
+.size_sm {
+  font-size: 14px;
+} //h5
+.size_md {
+  font-size: 16px;
+} //h4
+.size_lg {
+  font-size: 18px;
+} //h3
+.size_xl {
+  font-size: 24px;
+} //h2
+.size_xxl {
+  font-size: 32px;
+} //h1
+
+.fgc_gold {
+  color: gold;
+}
+
+.fgc_red {
+  color: #ff5003;
+}
